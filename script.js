@@ -11,7 +11,7 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
-  $('.saveBtn').on('click', function() {
+  $('.saveBtn').on('click', function () {
     var hourId = $(this).closest('.time-block').attr('id');
     var eventText = $(this).siblings('.description').val();
     localStorage.setItem(hourId, eventText);
@@ -26,5 +26,4 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-  // TODO: Add code to display the current date in the header of the page.
 });
