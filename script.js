@@ -38,4 +38,11 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
+  $('.time-block').each(function () {
+    var hourId = $(this).attr('id');
+    var savedEvent = localStorage.getItem(hourId);
+    if (savedEvent) {
+      $(this).find('.description').val(savedEvent);
+    }
+  });
 });
