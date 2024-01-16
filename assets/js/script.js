@@ -50,7 +50,7 @@ $(function () {
       timeBlock.addClass('future');
     }
     
-    let savedEvent = localStorage.getItem('hour-' + hour);
+    var savedEvent = localStorage.getItem('hour-' + hour);
     if (savedEvent) {
       textArea.val(savedEvent);
     }
