@@ -16,7 +16,7 @@ $(function () {
     var eventText = $(event.target).siblings('.description').val();
     localStorage.setItem(hourId, eventText);
   }
-  
+
   $('.container-lg').on('click', '.saveBtn', saveBtn);
 
   // TODO: Add code to apply the past, present, or future class to each time
@@ -26,33 +26,36 @@ $(function () {
   // current hour in 24-hour time?
   //
   function createTimeBlocks() {
-    for (var hour = 0; hour < 24; hour++) {
-      var displayHour = hour === 0 ? '12AM' : (hour < 12 ? hour + 'AM' : (hour === 12 ? '12PM' : (hour - 12) + 'PM'));
-      var timeBlock = $('<div>').addClass('row time-block').attr('id', 'hour-' + hour);
-      var hourDiv = $('<div>').addClass('col-2 col-md-1 hour text-center py-3').text(displayHour);
-      var textArea = $('<textarea>').addClass('col-8 col-md-10 description').attr('rows', '3');
-      var saveButton = $('<button>').addClass('btn saveBtn col-2 col-md-1').attr('aria-label', 'save');
-      var saveIcon = $('<i>').addClass('fas fa-save').attr('aria-hidden', 'true');
+  var startHour = 9; 
+  var endHour = 18; 
 
-      saveButton.append(saveIcon);
-      timeBlock.append(hourDiv, textArea, saveButton);
-      $('.container-lg').append(timeBlock);
+  for (var hour = startHour; hour < endHour; hour++) {
+    var displayHour = hour === 0 ? '12AM' : (hour < 12 ? hour + 'AM' : (hour === 12 ? '12PM' : (hour - 12) + 'PM'));
+    var timeBlock = $('<div>').addClass('row time-block').attr('id', 'hour-' + hour);
+    var hourDiv = $('<div>').addClass('col-2 col-md-1 hour text-center py-3').text(displayHour);
+    var textArea = $('<textarea>').addClass('col-8 col-md-10 description').attr('rows', '3');
+    var saveButton = $('<button>').addClass('btn saveBtn col-2 col-md-1').attr('aria-label', 'save');
+    var saveIcon = $('<i>').addClass('fas fa-save').attr('aria-hidden', 'true');
 
-      var currentHour = dayjs().hour();
-      if (hour < currentHour) {
-        timeBlock.addClass('past');
-      } else if (hour === currentHour) {
-        timeBlock.addClass('present');
-      } else {
-        timeBlock.addClass('future');
-      }
-      
-      let savedEvent = localStorage.getItem('hour-' + hour);
-      if (savedEvent) {
-        textArea.val(savedEvent);
-      }
+    saveButton.append(saveIcon);
+    timeBlock.append(hourDiv, textArea, saveButton);
+    $('.container-lg').append(timeBlock);
+
+    var currentHour = dayjs().hour();
+    if (hour < currentHour) {
+      timeBlock.addClass('past');
+    } else if (hour === currentHour) {
+      timeBlock.addClass('present');
+    } else {
+      timeBlock.addClass('future');
+    }
+    
+    let savedEvent = localStorage.getItem('hour-' + hour);
+    if (savedEvent) {
+      textArea.val(savedEvent);
     }
   }
+}
 
   createTimeBlocks();
   // TODO: Add code to get any user input that was saved in localStorage and set
