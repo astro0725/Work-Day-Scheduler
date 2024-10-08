@@ -2,12 +2,12 @@
 Work Day Scheduler is a simple calendar application that allows users to schedule tasks for a typical 9-to-5 workday. This application enables users to add tasks for each hour of the workday, save their input to local storage, and view tasks that are color-coded based on whether the time slot is in the past, present, or future.
 
 ## Table of Contents
-[Description](#Description)
-[Features](#Features)
-[Technologies](#Technologies)
-[Installation](#Installation)
-[Usage](#Usage)
-[License](#License)
+- [Description](#Description)
+- [Features](#Features)
+- [Technologies](#Technologies)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [License](#License)
 
 ## Description
 The Work Day Scheduler provides a clean and easy interface for users to track their workday tasks. It dynamically displays the current date and time, color-codes time blocks to represent whether the time is in the past, present, or future, and allows users to save tasks to local storage so they persist even after the page is refreshed.
