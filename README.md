@@ -37,7 +37,7 @@ Local Storage: To store tasks for each hour
 - Navigate to the project directory:
 `cd work-day-scheduler`
 - Open the index.html file in a web browser to run the scheduler locally.
-- Alternatively, you can access the deployed version of the project directly [here](https://astro0725.github.io/weather-dash/).
+- Alternatively, you can access the deployed version of the project directly [here](https://astro0725.github.io/work-day-scheduler/).
 
 ## Usage
 How the Website Works:
